@@ -72,9 +72,18 @@ export default {
                     published: 0
                 })
             }).then(response => {
-                console.log(response);
                 if (response.ok) {
-                    console.log(response.status);
+                    this.$toasted.show("Success", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
+                } else {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 }
             });
         }

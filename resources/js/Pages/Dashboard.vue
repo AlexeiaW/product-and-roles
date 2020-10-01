@@ -82,6 +82,12 @@ export default {
             if (data.token) {
                 localStorage.setItem("token", data.token);
                 this.getProducts();
+            } else {
+                this.$toasted.show("Unauthorized", {
+                    theme: "toasted-primary",
+                    position: "bottom-right",
+                    duration: 5000
+                });
             }
         });
     }

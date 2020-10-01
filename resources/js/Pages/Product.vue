@@ -90,6 +90,13 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     this.product = data;
+                })
+                .catch(error => {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 });
         },
         checked: function(event) {
@@ -119,7 +126,17 @@ export default {
                 }
             ).then(response => {
                 if (response.ok) {
-                    console.log(response.status);
+                    this.$toasted.show("Success", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
+                } else {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 }
             });
         },
@@ -137,7 +154,17 @@ export default {
                 }
             ).then(response => {
                 if (response.ok) {
-                    console.log(response.status);
+                    this.$toasted.show("Success", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
+                } else {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 }
             });
         }

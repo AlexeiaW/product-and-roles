@@ -43,11 +43,20 @@ export default {
             fetch("http://onbrandhq-tech-test.test/api/approved-products", {
                 method: "GET",
                 headers: {
-                    Authorization: "Bearer ${token}",
+                    Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
                 }
             })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        this.$toasted.show("Unauthorized", {
+                            theme: "toasted-primary",
+                            position: "bottom-right",
+                            duration: 5000
+                        });
+                    }
+                    response.json();
+                })
                 .then(data => {
                     this.products = data;
                 });

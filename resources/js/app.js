@@ -1,23 +1,23 @@
-require('./bootstrap');
+require("./bootstrap");
+import Toasted from "vue-toasted";
+import Vue from "vue";
+import { InertiaApp } from "@inertiajs/inertia-vue";
+import { InertiaForm } from "laravel-jetstream";
+import PortalVue from "portal-vue";
 
-import Vue from 'vue';
-
-import { InertiaApp } from '@inertiajs/inertia-vue';
-import { InertiaForm } from 'laravel-jetstream';
-import PortalVue from 'portal-vue';
-
+Vue.use(Toasted);
 Vue.use(InertiaApp);
 Vue.use(InertiaForm);
 Vue.use(PortalVue);
 
-const app = document.getElementById('app');
+const app = document.getElementById("app");
 
 new Vue({
-    render: (h) =>
+    render: h =>
         h(InertiaApp, {
             props: {
                 initialPage: JSON.parse(app.dataset.page),
-                resolveComponent: (name) => require(`./Pages/${name}`).default,
-            },
-        }),
+                resolveComponent: name => require(`./Pages/${name}`).default
+            }
+        })
 }).$mount(app);
