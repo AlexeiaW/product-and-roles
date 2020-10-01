@@ -26,9 +26,16 @@ class UserFactory extends Factory
 
         $roles = ['ROLE_SUBMIT', 'ROLE_APPROVE', 'ROLE_CLIENT', 'ROLE_ADMIN'];
 
+        $email = $this->faker->unique()->safeEmail;
+
+        print "\n";
+        print "************\n";
+        print "email: " . $email . "\n";
+        print "password: password\n";
+
         return [
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => $email,
             'email_verified_at' => now(),
             'roles' => $roles[$rand],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
