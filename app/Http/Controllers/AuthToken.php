@@ -9,7 +9,8 @@ use Illuminate\Support\Str;
 class AuthToken extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Handle the incoming request. This method returns the user 
+     * token for an authorised user.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

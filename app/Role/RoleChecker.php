@@ -7,6 +7,7 @@ use App\Models\User;
 /**
  * Class RoleChecker
  * @package App\Role
+ * A class to check user roles through auth middleware
  */
 class RoleChecker
 {

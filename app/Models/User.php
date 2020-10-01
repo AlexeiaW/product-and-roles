@@ -62,6 +62,7 @@ class User extends Authenticatable
 
 
     /***
+     * Add a role to a user
      * @param string $role
      * @return $this
      */
@@ -77,6 +78,7 @@ class User extends Authenticatable
     }
 
     /**
+     * Set a user role
      * @param array $roles
      * @return $this
      */
@@ -87,6 +89,7 @@ class User extends Authenticatable
     }
 
     /***
+     * Check if the user has the provided role
      * @param $role
      * @return mixed
      */
@@ -96,6 +99,7 @@ class User extends Authenticatable
     }
 
     /***
+     * Check if the user has the provided roles
      * @param $roles
      * @return mixed
      */
@@ -111,6 +115,7 @@ class User extends Authenticatable
     }
 
     /**
+     * Get roles associated with the user
      * @return array
      */
     public function getRoles()

@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// Route for displaying only approved products 
 Route::middleware('auth:sanctum')->get('/approved-products', [ProductsController::class, 'approvedProducts']);
+
+// REST route for product CRUD
 Route::middleware('auth:sanctum')->resource('products', ProductsController::class);

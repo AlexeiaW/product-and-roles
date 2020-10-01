@@ -15,6 +15,8 @@ class ProductsController extends Controller
      */
     public function __construct()
     {
+        // Set appropriate middleware for each method in this controller based on the 
+        // user role
         $this->middleware('check_user_role:' . \App\Role\UserRole::ROLE_SUBMIT)->only('store');
 
         $this->middleware('check_user_role:' . \App\Role\UserRole::ROLE_APPROVE)->only('index');
@@ -28,7 +30,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the product.
      *
      * @return Response
      */
@@ -38,7 +40,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new product.
      *
      * @return Response
      */
@@ -48,7 +50,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created product in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -67,7 +69,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified product.
      *
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
@@ -78,7 +80,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified product.
      *
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
@@ -89,7 +91,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified product in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Products  $products
@@ -109,7 +111,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified product from storage.
      *
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response

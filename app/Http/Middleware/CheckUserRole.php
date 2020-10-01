@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class CheckUserRole
  * @package App\Http\Middleware
+ * Auth middle ware to check the user role in request
  */
 class CheckUserRole
 {
