@@ -75,13 +75,14 @@ export default {
     },
     methods: {
         getProduct() {
+            let token = localStorage.getItem("token");
+
             fetch(
                 `http://onbrandhq-tech-test.test/api/products/${this.product_id}`,
                 {
                     method: "GET",
                     headers: {
-                        Authorization:
-                            "Bearer 1|bXPBMekcAbRy4M9znid0UyyU8TydWPlIge34fr41",
+                        Authorization: `Bearer ${token}`,
                         "Content-Type": "application/json"
                     }
                 }
@@ -101,13 +102,14 @@ export default {
             }
         },
         updateProduct: function() {
+            let token = localStorage.getItem("token");
+
             fetch(
                 `http://onbrandhq-tech-test.test/api/products/${this.product_id}`,
                 {
                     method: "PUT",
                     headers: {
-                        Authorization:
-                            "Bearer 1|bXPBMekcAbRy4M9znid0UyyU8TydWPlIge34fr41",
+                        Authorization: `Bearer ${token}`,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
@@ -122,13 +124,14 @@ export default {
             });
         },
         deleteProduct: function() {
+            let token = localStorage.getItem("token");
+
             fetch(
                 `http://onbrandhq-tech-test.test/api/products/${this.product_id}`,
                 {
                     method: "DELETE",
                     headers: {
-                        Authorization:
-                            "Bearer 1|bXPBMekcAbRy4M9znid0UyyU8TydWPlIge34fr41",
+                        Authorization: `Bearer ${token}`,
                         "Content-Type": "application/json"
                     }
                 }

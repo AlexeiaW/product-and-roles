@@ -38,11 +38,12 @@ export default {
     },
     methods: {
         getProducts() {
+            let token = localStorage.getItem("token");
+
             fetch("http://onbrandhq-tech-test.test/api/approved-products", {
                 method: "GET",
                 headers: {
-                    Authorization:
-                        "Bearer 1|bXPBMekcAbRy4M9znid0UyyU8TydWPlIge34fr41",
+                    Authorization: "Bearer ${token}",
                     "Content-Type": "application/json"
                 }
             })

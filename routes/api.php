@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AuthToken;
 use App\Http\Controllers\ProductsController;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -24,4 +23,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('auth:sanctum')->get('/approved-products', [ProductsController::class, 'approvedProducts']);
 Route::middleware('auth:sanctum')->resource('products', ProductsController::class);
-Route::post('/auth-token', AuthToken::class);

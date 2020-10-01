@@ -53,11 +53,12 @@ export default {
     },
     methods: {
         getProducts() {
+            let token = localStorage.getItem("token");
+
             fetch("http://onbrandhq-tech-test.test/api/products", {
                 method: "GET",
                 headers: {
-                    Authorization:
-                        "Bearer 1|bXPBMekcAbRy4M9znid0UyyU8TydWPlIge34fr41",
+                    Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
                 }
             })
@@ -65,10 +66,24 @@ export default {
                 .then(data => {
                     this.products = data;
                 });
+        },
+        async getToken() {
+            return await fetch("http://onbrandhq-tech-test.test/auth-token", {
+                method: "GET"
+            })
+                .then(response => response.json())
+                .then(data => {
+                    return data;
+                });
         }
     },
     mounted: function() {
-        this.getProducts();
+        this.getToken().then(data => {
+            if (data.token) {
+                localStorage.setItem("token", data.token);
+                this.getProducts();
+            }
+        });
     }
 };
 </script>
