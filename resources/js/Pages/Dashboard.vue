@@ -6,7 +6,7 @@
                     <h3
                         class="font-semibold text-xl text-gray-800 leading-tight px-4 py-2"
                     >
-                        Approved products
+                        All products
                     </h3>
 
                     <div

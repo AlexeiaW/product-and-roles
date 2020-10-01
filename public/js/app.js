@@ -3047,6 +3047,166 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3069,15 +3229,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     switchToTeam: function switchToTeam(team) {
-      this.$inertia.put('/current-team', {
-        'team_id': team.id
+      this.$inertia.put("/current-team", {
+        team_id: team.id
       }, {
         preserveState: false
       });
     },
     logout: function logout() {
-      axios.post('/logout').then(function (response) {
-        window.location = '/';
+      axios.post("/logout").then(function (response) {
+        window.location = "/";
       });
     }
   },
@@ -26362,6 +26522,29 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" },
+                [
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: "/approved-products",
+                        active:
+                          _vm.$page.currentRouteName == "approved-products"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Approved products\n                        "
+                      )
+                    ]
+                  )
+                ],
+                1
               )
             ]),
             _vm._v(" "),
@@ -26564,7 +26747,11 @@ var render = function() {
                                                       : _vm._e(),
                                                     _vm._v(" "),
                                                     _c("div", [
-                                                      _vm._v(_vm._s(team.name))
+                                                      _vm._v(
+                                                        "\n                                                        " +
+                                                          _vm._s(team.name) +
+                                                          "\n                                                    "
+                                                      )
                                                     ])
                                                   ]
                                                 )
@@ -26718,13 +26905,25 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "font-medium text-base text-gray-800" },
-                    [_vm._v(_vm._s(_vm.$page.user.name))]
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.$page.user.name) +
+                          "\n                        "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "font-medium text-sm text-gray-500" },
-                    [_vm._v(_vm._s(_vm.$page.user.email))]
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.$page.user.email) +
+                          "\n                        "
+                      )
+                    ]
                   )
                 ])
               ]),
@@ -27662,11 +27861,7 @@ var render = function() {
                 staticClass:
                   "font-semibold text-xl text-gray-800 leading-tight px-4 py-2"
               },
-              [
-                _vm._v(
-                  "\n                    Approved products\n                "
-                )
-              ]
+              [_vm._v("\n                    All products\n                ")]
             ),
             _vm._v(" "),
             _vm._l(_vm.products, function(product) {
