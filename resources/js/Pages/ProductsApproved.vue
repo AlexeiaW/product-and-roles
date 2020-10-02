@@ -50,6 +50,13 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     this.products = data;
+                })
+                .catch(error => {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 });
         }
     },

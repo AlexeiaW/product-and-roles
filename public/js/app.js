@@ -4069,6 +4069,12 @@ __webpack_require__.r(__webpack_exports__);
         return response.json();
       }).then(function (data) {
         _this.products = data;
+      })["catch"](function (error) {
+        _this.$toasted.show("Unauthorized", {
+          theme: "toasted-primary",
+          position: "bottom-right",
+          duration: 5000
+        });
       });
     }
   },
