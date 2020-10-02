@@ -3660,6 +3660,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return response.json();
       }).then(function (data) {
         _this.products = data;
+      })["catch"](function (error) {
+        _this.$toasted.show("Unauthorized", {
+          theme: "toasted-primary",
+          position: "bottom-right",
+          duration: 5000
+        });
       });
     },
     getToken: function getToken() {
@@ -3704,6 +3710,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           duration: 5000
         });
       }
+    })["catch"](function (error) {
+      _this2.$toasted.show("Unauthorized", {
+        theme: "toasted-primary",
+        position: "bottom-right",
+        duration: 5000
+      });
     });
   }
 });

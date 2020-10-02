@@ -65,6 +65,13 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     this.products = data;
+                })
+                .catch(error => {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
                 });
         },
         async getToken() {
@@ -78,18 +85,26 @@ export default {
         }
     },
     mounted: function() {
-        this.getToken().then(data => {
-            if (data.token) {
-                localStorage.setItem("token", data.token);
-                this.getProducts();
-            } else {
+        this.getToken()
+            .then(data => {
+                if (data.token) {
+                    localStorage.setItem("token", data.token);
+                    this.getProducts();
+                } else {
+                    this.$toasted.show("Unauthorized", {
+                        theme: "toasted-primary",
+                        position: "bottom-right",
+                        duration: 5000
+                    });
+                }
+            })
+            .catch(error => {
                 this.$toasted.show("Unauthorized", {
                     theme: "toasted-primary",
                     position: "bottom-right",
                     duration: 5000
                 });
-            }
-        });
+            });
     }
 };
 </script>
