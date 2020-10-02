@@ -4054,15 +4054,7 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "application/json"
         }
       }).then(function (response) {
-        if (!response.ok) {
-          _this.$toasted.show("Unauthorized", {
-            theme: "toasted-primary",
-            position: "bottom-right",
-            duration: 5000
-          });
-        }
-
-        response.json();
+        return response.json();
       }).then(function (data) {
         _this.products = data;
       });

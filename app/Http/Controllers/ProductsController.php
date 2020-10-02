@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProductsController extends Controller
 {
@@ -130,6 +131,6 @@ class ProductsController extends Controller
      */
     public function approvedProducts(Products $products)
     {
-        return $products->all();
+        return $products->where('published', 'LIKE', '%1%')->get();
     }
 }

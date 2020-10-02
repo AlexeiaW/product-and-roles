@@ -47,16 +47,7 @@ export default {
                     "Content-Type": "application/json"
                 }
             })
-                .then(response => {
-                    if (!response.ok) {
-                        this.$toasted.show("Unauthorized", {
-                            theme: "toasted-primary",
-                            position: "bottom-right",
-                            duration: 5000
-                        });
-                    }
-                    response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     this.products = data;
                 });
