@@ -14,3 +14,7 @@
 -   Migration: create_users added a roles field. create_products for storing products.
 -   Resource/js/pages: Dashboard,Product,ProductsApproved,ProductsSubmit. These are the front end views for managing products.
 -   Routes: web.php routes for rendering views and api.php for api access
+
+## usage
+
+-   login with different user accounts, and see that users can only perform certain actions with certain roles. The default role a user will receive when registering on the front end through the registration form is as a client.
