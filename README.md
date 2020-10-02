@@ -1,7 +1,7 @@
 ## onbrandhq-tech-test
 
 -   Set up your .env file for a laravel installatioin and add your DB_DATABASE name
--   Run php artisan migrate:fresh --seed, in your terminal, which wil run the migrations and seed the database with users and products. The user email, password and role will be printed to the terminal, for you to use when testing the application.
+-   Run `php artisan migrate:fresh --seed`, in your terminal, which wil run the migrations and seed the database with users and products. The user email, password and role will be printed to the terminal, for you to use when testing the application.
 -   Now you can login with the user accounts above and see how user can only access certain parts of the application based on their roles.
 
 ## onbrandhq-tech-test code files I've created and edited
