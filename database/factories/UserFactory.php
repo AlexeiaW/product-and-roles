@@ -27,17 +27,19 @@ class UserFactory extends Factory
         $roles = ['ROLE_SUBMIT', 'ROLE_APPROVE', 'ROLE_CLIENT', 'ROLE_ADMIN'];
 
         $email = $this->faker->unique()->safeEmail;
+        $roles =  $roles[$rand];
 
         print "\n";
         print "************\n";
         print "email: " . $email . "\n";
         print "password: password\n";
+        print "roles: " . $roles . "\n";
 
         return [
             'name' => $this->faker->name,
             'email' => $email,
             'email_verified_at' => now(),
-            'roles' => $roles[$rand],
+            'roles' => $roles,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];
